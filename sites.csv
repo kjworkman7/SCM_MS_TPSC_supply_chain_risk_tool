@@ -1,0 +1,4 @@
+site,location,latitude,longitude,criticality_score,capability_score
+New Jersey,NJ,40.0583,-74.4057,90,85
+Texas,TX,31.9686,-99.9018,70,60
+California,CA,36.7783,-119.4179,80,45
