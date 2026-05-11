@@ -121,7 +121,15 @@ st.dataframe(df)
 
 st.subheader("📋 Risk Table")
 
-st.dataframe(df.style.applymap(color_risk, subset=["Risk Score"]))
+def highlight_risk(row):
+    if row["Risk Score"] > 60:
+        return ["background-color: red"] * len(row)
+    elif row["Risk Score"] > 40:
+        return ["background-color: orange"] * len(row)
+    else:
+        return ["background-color: green"] * len(row)
+
+st.dataframe(df.style.apply(highlight_risk, axis=1))
 
 st.subheader("📍 Supply Chain Risk Map")
 
